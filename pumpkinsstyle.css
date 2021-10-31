@@ -4,17 +4,18 @@ body{
 	height: 100%;
 	position: relative;
 }
-
+/*setting CSS variables*/
 :root {
 	--header-height: 70px;
 	--footer-height: 50px;
 	--homepage-content-header: 120px;
 }
+
+/*styling navbar and navbar links*/
 .navcenter{
 	display: flex;
 	align-items: center;
 }
-
 .navheader{
 	background-color: #FF9945;
 	height: var(--header-height);
@@ -30,7 +31,6 @@ body{
 	align-items: center;
 	
 }
-
 .navlinks{
 	position: absolute;
 	top: calc(var(--header-height));
@@ -41,25 +41,31 @@ body{
 	overflow: hidden;
 	transition: 0.5s ease-in-out max-height;
 }
+
+/* searchbar */
 .search{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 3rem;
+	transition: 0.5s ease-in-out height;
 }
-
-.search i{
+.search i{ /*search icon*/
 	margin-right: 1rem;
 }
-
 .search input{
 	width: 100%;
+	padding-left: 1rem;
 	border-radius: 1rem;
-	border: 2px solid #FF9945
+	border: 2px solid #FF9945;
+	font-size: 1rem;
+	font-family: 'Josefin sans';
+}
+.search input:focus{
+	outline: none;
 }
 
-
-
+/*Making navbar responsive*/
 .nav-btn{
 	padding: 0.15rem 0.75rem;
 	background-color: white;
@@ -68,22 +74,18 @@ body{
 	margin-right: 20px;
 
 }
-
 .show-links{ /*javascript toggle dropdown menu*/
 	max-height: 500px;
 	width: 100%;
 }
-
 .nav-btn:hover{
 	color: white;
 	background-color: #FFB43F;
 }
-
 .nav-btn i{
 	font-size: 1.15rem;
 	color: #FFC76E;
 }
-
 .navlink{
 	display: block;
 	text-decoration: none;
@@ -100,6 +102,8 @@ body{
 	color: #FFC76E;
 	background-color: white;
 }
+
+/*styling title of website and logo*/
 .title{
 	display: flex;
 	flex-direction: row;
@@ -116,6 +120,8 @@ body{
 	font-size: 40px;
 	text-decoration: none;
 }
+
+/*header image below navbar*/
 .homepage-content-header{
 	height: var(--homepage-content-header);
 	position: relative;
@@ -137,13 +143,13 @@ body{
 .homepage-content-header:hover{
 	opacity: 0.8;
 }
+
+/*homepage main content*/
 .homepage-content-container{	
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: antiquewhite;
-	
-	
 }
 .homepage-content{
 	display: flex;
@@ -154,7 +160,6 @@ body{
 	max-width: 450px;
 	min-height: calc(100vh - (var(--header-height) + var(--footer-height) + var(--homepage-content-header)));
 }
-
 .homepage-content p{
 	position: relative;
 	
@@ -162,6 +167,7 @@ body{
 	font-size: 32px;
 }
 
+/*footer*/
 .page-footer{
 	display: inline-flex;
 	align-items: center;
@@ -175,7 +181,7 @@ body{
 	color: white;
 }
 
-@media screen and (min-width: 1300px){
+@media screen and (min-width: 1500px){
 	.nav-btn{
 		display: none;
 	}
@@ -196,7 +202,7 @@ body{
 		align-items: center;
 		width: 100%;
 	}
-}
+} 
 
 @media screen and (min-width: 768px){
 	.homepage-content{
