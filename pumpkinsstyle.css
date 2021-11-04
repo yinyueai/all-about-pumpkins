@@ -11,6 +11,12 @@ body{
 	--homepage-content-header: 120px;
 }
 
+/*fixed navbar/header on scroll*/
+header{
+	position: sticky;
+	top: 0;
+}
+
 /*styling navbar and navbar links*/
 .navcenter{
 	display: flex;
@@ -41,6 +47,9 @@ body{
 	overflow: hidden;
 	transition: 0.5s ease-in-out max-height;
 }
+.navlink:first-child{
+	border-top: 2px solid white;
+}
 
 /* searchbar */
 .search{
@@ -49,6 +58,7 @@ body{
 	align-items: center;
 	height: 3rem;
 	transition: 0.5s ease-in-out height;
+	background-color: #FFC76E;
 }
 .search i{ /*search icon*/
 	margin-right: 1rem;
@@ -56,6 +66,9 @@ body{
 .search input{
 	width: 100%;
 	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.3rem;
 	border-radius: 1rem;
 	border: 2px solid #FF9945;
 	font-size: 1rem;
@@ -92,7 +105,7 @@ body{
 	padding: 5px;
 	text-align: center;
 	font-size: 20px;
-	border-top: 2px solid white;
+	border-bottom: 2px solid white;
 	color: white;
 	background-color: #FFC76E;
 	transition: 0.2s;
@@ -122,12 +135,12 @@ body{
 }
 
 /*header image below navbar*/
-.homepage-content-header{
+.page-content-header{
 	height: var(--homepage-content-header);
 	position: relative;
 	transition: 0.3s ease-in-out opacity;
 }
-.homepage-content-header:before{
+.page-content-header:before{
 	content: '';
 	position: absolute;
 	top: 0px;
@@ -140,7 +153,7 @@ body{
 	background-position: top center;
 	z-index: -1;
 }
-.homepage-content-header:hover{
+.page-content-header:hover{
 	opacity: 0.8;
 }
 
@@ -165,6 +178,43 @@ body{
 	
 	color: black;
 	font-size: 32px;
+}	
+
+/*general page content*/
+.page-content-container{
+	background-color: antiquewhite;
+	min-height: calc(100vh - (var(--header-height) + var(--footer-height)));
+}
+
+.page-content{
+	padding: 
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	gap: auto 15px;
+}
+
+.pumpkin-card{
+	display: block;
+	justify-content: center;
+	align-items: flex-start;
+	width: 340px;
+	height: auto;
+	max-height: 500px;
+	border: 2px solid blue;
+	text-align: center;
+}
+
+.pumpkin-img{
+	width: 100%;
+	max-width: 300px;
+	height: auto;
+	margin: auto;
+	padding-top: 1rem;
+}
+
+.pumpkin-card p{
+	font-size: 24px;
 }
 
 /*footer*/
@@ -181,14 +231,21 @@ body{
 	color: white;
 }
 
+footer{
+	position: sticky;
+}
+
 @media screen and (min-width: 1500px){
 	.nav-btn{
 		display: none;
 	}
 	.navlink{
 		padding: 10px 15px;
-		border-top: none;
+		border: none;
 		border-radius: 3rem;
+	}
+	.navlink:first-child{
+		border: none;
 	}
 	.navlinks{
 		position: relative;
@@ -201,6 +258,9 @@ body{
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
+	}
+	.search{
+		background: none;
 	}
 } 
 
